@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+   <!-- creator Brian Barnabas Langay
+    email brianlangay0@gmail.com-->
+    <!-- Base application theme. -->
+    <style name="Base.Theme.WeatherApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+        <!-- Navigation bar color (if applicable) -->
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+</resources>

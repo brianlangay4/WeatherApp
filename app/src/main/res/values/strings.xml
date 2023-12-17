@@ -1,0 +1,7 @@
+<!-- creator Brina Langay
+ email brianlangay0@gmail.com-->
+<resources>
+    <string name="app_name">WeatherApp</string>
+
+    <string name="select_theme_prompt">Select Theme</string>
+</resources>

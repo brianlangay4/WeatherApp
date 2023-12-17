@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <!-- creator Brina Langay
+    email brianlangay0@gmail.com-->
+<!-- arrays.xml -->
+<resources>
+    <string-array name="theme_options">
+        <item>Default Theme</item>
+        <item>yellow Theme</item>
+        <item>nevy Theme</item>
+    </string-array>
+</resources>

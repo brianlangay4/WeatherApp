@@ -2,7 +2,9 @@ package com.builtin.weatherapp;
 /*creator Brian Barnabas Langay
         email brianlangay0@gmail.com*/
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -134,7 +136,7 @@ public class WeatherAcivity extends AppCompatActivity  {
                 navColor = ContextCompat.getColor(this, R.color.dark);
             } else {
                 // Light or dark mode
-                navColor = ContextCompat.getColor(this, R.color.d1);
+                navColor = ContextCompat.getColor(this, R.color.d0);
             }
 
             window.setNavigationBarColor(navColor);
@@ -163,8 +165,14 @@ public class WeatherAcivity extends AppCompatActivity  {
                 clear
         );
 
-       weatherApiClient.execute("jinan");
 
+
+       //weatherApiClient.execute(getStoredCityName());
+       // weatherApiClient.execute("dar es salaam");
+
+        // Fetch the stored city name from StringManager
+        String cityName0 = CityManager.getCityName(this);
+        weatherApiClient.execute(cityName0);
 
 
 
@@ -201,8 +209,8 @@ public class WeatherAcivity extends AppCompatActivity  {
         } else if (theme.contains("ello")) {
             yellow_theme();
         }
-        else if (theme.contains("evy")) {
-            nevy_theme();
+        else if (theme.contains("igh")) {
+            night_theme();
         }
 
 
@@ -210,18 +218,17 @@ public class WeatherAcivity extends AppCompatActivity  {
     }
 
    public void default_theme(){
-        main_bc.setBackground(getResources().getDrawable(R.drawable.wbc_light2));
+        main_bc.setBackground(getResources().getDrawable(R.drawable.blue_bc));
 
     }
 
     public void yellow_theme(){
         main_bc.setBackground(getResources().getDrawable(R.drawable.wbc_dark));
     }
-    public void nevy_theme(){
+    public void night_theme(){
         main_bc.setBackground(getResources().getDrawable(R.drawable.wbc_light));
 
     }
-
 
 
 

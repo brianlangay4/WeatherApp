@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="30dp"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
     tools:context=".Settings">
 
 
@@ -48,14 +51,14 @@
             <Spinner
                 android:id="@+id/themeSpinner"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="55dp"
                 android:layout_marginTop="10dp"
                 android:entries="@array/theme_options"
                 android:prompt="@string/select_theme_prompt"
                 android:paddingLeft="10dp"
                 android:background="@drawable/transp4"
                 android:spinnerMode="dropdown"
-                android:dropDownVerticalOffset="65dp"
+                android:dropDownVerticalOffset="55dp"
                 android:popupBackground="@drawable/transp4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -73,13 +76,13 @@
             <EditText
                 android:id="@+id/change_city"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="55dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/transp4"
+                android:fontFamily="sans-serif"
                 android:hint="enter city name"
-                android:fontFamily="@font/acme"
-                android:padding="16dp">
-            </EditText>
+                android:padding="16dp"
+                android:textColorHint="@color/dark01"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/confirm_btn"
@@ -87,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="@color/d3"
+                android:backgroundTint="@color/dblue"
                 android:fontFamily="@font/acme"
                 android:text="confirm"
                 app:cornerRadius="10dp" />

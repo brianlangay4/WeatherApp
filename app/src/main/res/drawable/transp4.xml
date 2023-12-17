@@ -11,7 +11,7 @@
 
     <stroke
         android:width="2dp"
-        android:color="@color/d3"
+        android:color="@color/dblue"
         />
 
     <padding android:left="10dp"/>

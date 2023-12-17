@@ -2,6 +2,7 @@ package com.builtin.weatherapp;
 /*creator Brian Barnabas Langay
         email brianlangay0@gmail.com*/
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,31 +16,51 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.material.button.MaterialButton;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Settings extends AppCompatActivity {
+public class Settings extends AppCompatActivity implements CityValidationApiClient.CityValidationListener {
 
     private ThemeViewModel themeViewModel;
     private SharedPreferences sharedPreferences;
+
+
 
 
     private String selectedTheme;
     private String pendingThemeChange;
     private String originalTheme;
 
+    private String cityName;
+
+
+
+    private String cityNameVal;
+
+    EditText changeCity;
+    MaterialButton confirm;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        changeCity = findViewById(R.id.change_city);
+        confirm = findViewById(R.id.confirm_btn);
 
+        sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
 
 
         // status bar transparent
@@ -126,6 +147,21 @@ public class Settings extends AppCompatActivity {
 
         });
 
+        //city name validation
+
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cityName = changeCity.getText().toString().trim();
+
+                // Validate the city name
+                validateCity(cityName);
+
+
+            }
+        });
+
+
 
     }
     public void onBackPressed() {
@@ -195,4 +231,44 @@ public class Settings extends AppCompatActivity {
 
         builder.show();
     }
+
+    //city validation logic background methods
+    private void validateCity(String cityName) {
+        CityValidationApiClient validationApiClient = new CityValidationApiClient(this);
+        validationApiClient.execute(cityName);
+    }
+
+    @Override
+    public void onValidationResult(boolean isValid) {
+        if (isValid) {
+            // City is valid, show confirmation dialog
+            showConfirmationDialog(changeCity.getText().toString().trim());
+        } else {
+            // City is not valid, show error message
+            changeCity.setError("Invalid city name");
+        }
+    }
+
+    private void showConfirmationDialog(final String cityName) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Do you want to save the new city?");
+        StringValueManager stringManager2 = new StringValueManager(this);
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                CityManager.setCityName(Settings.this, cityName);
+                Toast.makeText(Settings.this, "City saved successfully!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Do nothing or provide any additional action
+            }
+        });
+        builder.show();
+    }
+
+
 }

@@ -5,14 +5,15 @@
     android:id="@+id/main_bc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wbc_light2"
+    android:background="@drawable/blue_bc"
+    android:orientation="horizontal"
     tools:context=".WeatherAcivity">
 
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         >
 
 
@@ -40,8 +41,8 @@
 
         <LinearLayout
             android:id="@+id/top"
-            android:layout_width="414dp"
-            android:layout_height="456dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="2dp"
@@ -69,7 +70,7 @@
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/acme"
                 android:text="Sunday, 8 March 2021"
-                android:textColor="@color/d2"
+                android:textColor="@color/d0"
                 android:textSize="12dp" />
 
 
@@ -85,22 +86,32 @@
                 android:textSize="26sp"
                 android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
                 android:background="@drawable/wtbc"
                 android:orientation="horizontal"
-                android:padding="10dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 app:cardCornerRadius="16dp">
 
                 <RelativeLayout
+                    android:id="@+id/relativeLayout"
                     android:layout_width="120dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="10dp">
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
 
                     <com.airbnb.lottie.LottieAnimationView
@@ -258,36 +269,40 @@
                 </RelativeLayout>
 
                 <LinearLayout
+                    android:id="@+id/linearLayout"
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="17dp"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
 
                     <TextView
                         android:id="@+id/degrees"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:fontFamily="@font/bowlby_one"
+                        android:fontFamily="@font/audiowide"
                         android:text="99"
                         android:textColor="@color/d0"
-                        android:textSize="60sp" />
+                        android:textSize="75sp" />
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/weather_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/acme"
-                android:textSize="20sp"
-                android:textColor="@color/d0"
                 android:text="---------"
+                android:textColor="@color/d0"
+                android:textSize="20sp"
                 android:visibility="visible" />
 
 
@@ -296,11 +311,12 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="368dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="0dp"
             android:background="@drawable/bottom"
-            android:padding="15dp">
+            android:gravity="center"
+            android:padding="10dp">
 
 
             <LinearLayout
@@ -309,9 +325,7 @@
                 android:orientation="vertical"
                 >
 
-
                 <LinearLayout
-                    android:layout_marginTop="40dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="5dp"

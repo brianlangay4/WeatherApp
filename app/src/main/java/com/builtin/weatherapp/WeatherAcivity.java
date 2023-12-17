@@ -201,8 +201,8 @@ public class WeatherAcivity extends AppCompatActivity  {
         } else if (theme.contains("ello")) {
             yellow_theme();
         }
-        else if (theme.contains("evy")) {
-            nevy_theme();
+        else if (theme.contains("igh")) {
+            night_theme();
         }
 
 
@@ -210,17 +210,18 @@ public class WeatherAcivity extends AppCompatActivity  {
     }
 
    public void default_theme(){
-        main_bc.setBackground(getResources().getDrawable(R.drawable.wbc_light2));
+        main_bc.setBackground(getResources().getDrawable(R.drawable.blue_bc));
 
     }
 
     public void yellow_theme(){
         main_bc.setBackground(getResources().getDrawable(R.drawable.wbc_dark));
     }
-    public void nevy_theme(){
+    public void night_theme(){
         main_bc.setBackground(getResources().getDrawable(R.drawable.wbc_light));
 
     }
+
 
 
 

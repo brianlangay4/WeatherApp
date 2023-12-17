@@ -25,13 +25,13 @@ public class SplashActivity extends AppCompatActivity {
         //change status bar color
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
-            window.setStatusBarColor(ContextCompat.getColor(this, R.color.yellow));
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.dblue));
         }
 
         // change bottom nav color
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
-            window.setNavigationBarColor(ContextCompat.getColor(this, R.color.yellow));
+            window.setNavigationBarColor(ContextCompat.getColor(this, R.color.dblue));
         }
 
 

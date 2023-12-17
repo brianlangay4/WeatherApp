@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="@color/d3"
+                android:backgroundTint="@color/dblue"
                 android:fontFamily="@font/acme"
                 android:text="confirm"
                 app:cornerRadius="10dp" />

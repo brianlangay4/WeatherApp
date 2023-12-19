@@ -5,8 +5,8 @@
 2322190027
 ##
 
-[weatherApp.webm](https://github.com/brianlangay4/WeatherApp/assets/67788456/00820071-c2aa-48cc-8180-e404ec3362b2)
 
+![weatherApp](https://github.com/brianlangay4/WeatherApp/assets/67788456/ea2dc67b-af9f-4248-8a82-81ae766ac05f)
 
 
 ## Introduction
@@ -81,6 +81,9 @@ The settings page allows users to select a theme from the spinner. The selected 
 
 ![weatherApp](https://github.com/brianlangay4/WeatherApp/assets/67788456/d5e761b5-a0cd-4448-ac35-bb625e407879)
 
+
+##full video
+[weatherApp.webm](https://github.com/brianlangay4/WeatherApp/assets/67788456/00820071-c2aa-48cc-8180-e404ec3362b2)
 
 
 

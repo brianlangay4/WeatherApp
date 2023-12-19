@@ -5,7 +5,7 @@
 2322190027
 ##
 
-![weatherApp.webm](https://github.com/brianlangay4/WeatherApp/assets/67788456/00820071-c2aa-48cc-8180-e404ec3362b2)
+[weatherApp.webm](https://github.com/brianlangay4/WeatherApp/assets/67788456/00820071-c2aa-48cc-8180-e404ec3362b2)
 
 
 

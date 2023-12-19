@@ -12,6 +12,13 @@
 ## Introduction
 WeatherApp is a mobile application designed to provide users with real-time weather information for a specified location. The app utilizes an API call to retrieve weather data and presents it in a user-friendly interface. Additionally, the app features a settings page that allows users to customize the theme.
 
+
+## Api Used
+full documentaion and details at https://www.weatherapi.com/ can also be accessed in rapidApi 
+
+![Screenshot 2023-12-15 at 05 52 48](https://github.com/brianlangay4/WeatherApp/assets/67788456/81c6ea36-9474-4515-b79f-f83c3de800e2)
+
+
 ## Features
 
 ### 1. WeatherApiClient Class
